@@ -1,0 +1,15 @@
+<main role="main">
+    <div class="container">
+        <ol class="breadcrumb">
+            <li><a href="#"><i class="icon icon-home"></i></a></li>
+            <li><a href="#">Trámites</a></li>
+            <li><a href="#">Acta de nacimiento</a></li>
+        </ol>
+        <div class="row tramite-content" style="min-height: 400px;">                    
+			{{tramite-buscador feature='www.gotohell.com' model=datos action="next_step"}}
+			{{component 'tramite-preview' activate=activePreview}}
+			{{component 'tramite-payment'}}
+			{{component 'tramite-complete'}}
+		</div>        
+	</div>
+</main>

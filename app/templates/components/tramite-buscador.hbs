@@ -1,0 +1,115 @@
+{{#if isActive}}
+    <section class="buscar">
+        <div class="col-md-6 col-md-offset-3">
+            <h3>Consulta</h3>
+            <ul class="nav nav-tabs">
+                <li class="active"><a data-toggle="tab" href="#tab-01">CURP</a></li>
+                <li><a data-toggle="tab" href="#tab-02">Datos personales</a></li>
+                <li><a data-toggle="tab" href="#tab-03">Cadena Digital</a></li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane active clearfix" id="tab-01">
+                    <div class="form-group">
+                        <label for="rfc">CURP</label>
+                        {{input value=this.curp id="CURP" class="form-control"}}
+                    </div>
+                </div>
+                <div class="tab-pane clearfix" id="tab-02">
+                    <div class="form-group col-sm-12">
+                        <label for="nombre">Nombre</label>
+                        <input name="nombre" id="nombre" class="form-control" />
+                    </div>
+                    <div class="form-group col-sm-6">
+                        <label for="apellido-p">Primer Apellido</label>
+                        <input name="apellido-p" id="apellido-p" class="form-control" />
+                    </div>
+                    <div class="form-group col-sm-6">
+                        <label for="apellido-s">Segundo Apellido</label>
+                        <input name="apellido-s" id="apellido-s" class="form-control" />
+                    </div>
+
+                    <div class="form-group datepicker-group col-sm-8">
+                        <label class="control-label" for="calendarYear">Fecha de Nacimiento</label>
+                        <input class="form-control" id="calendarYear" type="text" style="width:320px;">
+                        <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                    </div>
+
+                    <div class="form-group col-sm-4">
+                        <label for="sexo">Sexo</label>
+                        <div>
+                            <select class="form-control select small" id="sexo" name="sexo">
+                                <option value="" selected="selected"></option>
+                                <option value="Aguascalientes">Femenino</option>
+                                <option value="Aguascalientes">Masculino</option>
+
+                            </select>
+                        </div>
+                    </div>
+                    <script>
+                        $(function () {
+                            $('#calendarYear').datepicker({changeYear: true});
+                        });
+                    </script>
+
+                    <div class="form-group col-sm-12">
+                        <label for="entidad-federativa">Entidad Federativa</label>
+                        <div>
+                            <select class="form-control element select medium" id="element_7" name="select_ef">
+                                <option value="" selected="selected"></option>
+                                <option value="Aguascalientes">Aguascalientes</option>
+                                <option value="Baja California">Baja California</option>
+                                <option value="Baja California Sur">Baja California Sur</option>
+                                <option value="Campeche">Campeche</option>
+                                <option value="Chiapas">Chiapas</option>
+                                <option value="Chihuahua">Chihuahua</option>
+                                <option value="Coahuila">Coahuila</option>
+                                <option value="Colima">Colima</option>
+                                <option value="Distrito Federal">Distrito Federal</option>
+                                <option value="Durango">Durango</option>
+                                <option value="Estado de México">Estado de México</option>
+                                <option value="Guanajuato">Guanajuato</option>
+                                <option value="Guerrero">Guerrero</option>
+                                <option value="Hidalgo">Hidalgo</option>
+                                <option value="Jalisco">Jalisco</option>
+                                <option value="Michoacán">Michoacán</option>
+                                <option value="Morelos">Morelos</option>
+                                <option value="Nayarit">Nayarit</option>
+                                <option value="Nuevo León">Nuevo León</option>
+                                <option value="Oaxaca">Oaxaca</option>
+                                <option value="Puebla">Puebla</option>
+                                <option value="Querétaro">Querétaro</option>
+                                <option value="Quintana Roo">Quintana Roo</option>
+                                <option value="San Luis Potosí">San Luis Potosí</option>
+                                <option value="Sinaloa">Sinaloa</option>
+                                <option value="Sonora">Sonora</option>
+                                <option value="Tabasco">Tabasco</option>
+                                <option value="Tamaulipas">Tamaulipas</option>
+                                <option value="Tlaxcala">Tlaxcala</option>
+                                <option value="Veracruz">Veracruz</option>
+                                <option value="Yucatán">Yucatán</option>
+                                <option value="Zacatecas">Zacatecas</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane clearfix" id="tab-03">
+                    <div class="form-group">
+                        <label for="cadena-digital">Cadena Digital</label>
+                        <input name="cadena-digital" id="rfc" class="form-control" />
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="alert alert-danger"></div>
+            <div class="form-group top-buffer clearfix">
+                <div class="g-recaptcha pull-right" data-sitekey="6LfulAwTAAAAALtjRGZxBinREdNMITvETTXByiyh"></div>
+            </div>
+            <div class="form-group clearfix">
+                <button type="button" {{action 'search'}} class="btn btn-lg btn-default pull-right search-btn next_step"><i class="icon icon-search"></i> Buscar</button>
+            </div>
+
+            
+        </div>
+        <br/>
+    </section>
+{{/if}}
